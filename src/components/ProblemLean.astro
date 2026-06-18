@@ -3,6 +3,9 @@
 // Keeps the stat hook and the cause->effect chain, replaces the two insulin
 // prose paragraphs with a two-panel "prescription vs exam" visual + one
 // pull-quote. Cuts roughly half the prose of the two original sections.
+// The CTA pair (relocated here from the former Engineer section) sits beneath
+// the "We work for you" pull-quote.
+import CtaPair from "./CtaPair.astro";
 ---
 
 <section class="section probl" id="problem" aria-labelledby="probl-title">
@@ -55,6 +58,7 @@
           </div>
         </div>
         <p class="probl__quote"><span>We don't work for the vendors.</span> <span>We work for you.</span></p>
+        <div class="probl__cta"><CtaPair /></div>
       </div>
     </div>
   </div>
@@ -175,4 +179,7 @@
   /* each sentence stays whole: one line when it fits, a clean break between
      the two sentences when it doesn't */
   .probl__quote span { white-space: nowrap; }
+
+  /* relocated CTA pair, sitting beneath the pull-quote */
+  .probl__cta { margin-top: var(--space-l); }
 </style>
